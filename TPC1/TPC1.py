@@ -6,9 +6,12 @@ import matplotlib.pyplot as plt
 
 #    Crie uma função que lê a informação do ficheiro para um modelo, previamente pensado em memória;
 #    Pense num modelo para guardar uma distribuição; ---> Guarda num dicionario com cada chave sendo uma coluna do ficheiro, tendo os seus respetivos valores associados
+#    PS: Não consegui fazer com que o open funcionasse com somente o nome do ficheiro, como tal passei o path completo
+
+filename = r'C:\Users\Renato Gomes\OneDrive\Documentos\GitHub\PL2023\TPC1\myheart.csv'
 def csv_to_dic():
   data = {}
-  with open(r'C:\Users\Renato Gomes\OneDrive\Documentos\GitHub\PL2023\TPC1\myheart.csv') as csv_file:
+  with open(filename) as csv_file:
     csv_reader = csv.DictReader(csv_file)
     for row in csv_reader:
         for key, value in row.items():
